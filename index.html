@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=2">
+  <link rel="stylesheet" href="/assets/css/style.css?v=3">
 </head>
 <body>
   <a class="skip" href="#colecao">Pular para a coleção</a>
@@ -36,6 +36,7 @@
       </a>
       <nav class="nav" aria-label="Navegação principal">
         <a href="#colecao">Coleção</a>
+        <a href="#neyla">A Neyla</a>
         <a href="#inclusao">Inclusão</a>
         <a href="#personalize">Personalize</a>
         <a href="#como-pedir">Como pedir</a>
@@ -65,6 +66,10 @@
             <a href="#colecao" class="btn btn--primary">Explorar a coleção</a>
             <a href="#como-pedir" class="btn btn--ghost">Como funciona o pedido</a>
           </div>
+          <a class="host" href="#neyla">
+            <img src="/assets/img/neyla-sq.webp" alt="" width="52" height="52">
+            <span><strong>Atendimento pessoal da Neyla</strong>Você escolhe aqui, ela confirma tudo com você no Direct.</span>
+          </a>
           <ul class="hero__facts">
             <li><strong id="factCount">58</strong><span>peças na coleção</span></li>
             <li><strong id="factFrom">R$ 25</strong><span>a partir de</span></li>
@@ -98,16 +103,34 @@
       </div>
     </section>
 
-    <!-- HISTÓRIA -->
-    <section class="story" id="historia">
+    <!-- NEYLA -->
+    <section class="story" id="neyla">
       <div class="story__inner">
-        <div class="story__logo reveal"><img src="/assets/img/logo.webp" alt="Allavie Semijoias" loading="lazy" width="1000" height="934"></div>
+        <div class="story__photo reveal">
+          <div class="photo-arch">
+            <img src="/assets/img/neyla.webp" alt="Neyla Rodrigues usando o Colar Aço Letra Cravejada A da Allavie" loading="lazy" width="992" height="1328">
+          </div>
+          <img src="/assets/img/monogram.webp" alt="" class="story__badge" width="120" height="120" loading="lazy">
+          <p class="story__handle"><span class="script">Neyla</span> @neyla_rodriguess</p>
+        </div>
         <div class="story__text reveal">
-          <p class="eyebrow">Conheça a coleção Allavie</p>
-          <h2 class="title">Uma seleção feita para dar início à <em>nossa história</em></h2>
-          <p>Algumas peças estão disponíveis para <strong>pronta entrega</strong>, enquanto outras podem ser solicitadas <strong>sob encomenda</strong>.</p>
-          <p>E essa coleção está apenas começando… Todos os meses, novas peças e novidades chegarão por aqui, trazendo diferentes estilos, significados e possibilidades para você encontrar aquela joia que combina com a sua história.</p>
-          <p class="signature">Com carinho, <span class="script">Neyla</span></p>
+          <p class="eyebrow">Prazer, eu sou a Neyla</p>
+          <h2 class="title">Cada peça escolhida para dar início à <em>nossa história</em></h2>
+          <p>Esta é a coleção atual da Allavie: uma seleção de peças escolhidas uma a uma. Algumas estão disponíveis para <strong>pronta entrega</strong>, outras podem ser solicitadas <strong>sob encomenda</strong>.</p>
+          <p>E ela está só começando… Todos os meses chegam novas peças, com diferentes estilos, significados e possibilidades para você encontrar a joia que combina com a sua história. E quem te atende no Direct sou eu.</p>
+          <blockquote class="quote">
+            <p>“Pronta para um evento e, claro, escolhi minhas peças da Allavie para completar o look. Porque são os detalhes que fazem toda a diferença, né?”</p>
+          </blockquote>
+          <div class="wearing" id="wearing">
+            <img src="/assets/img/p13-2.webp" alt="" width="72" height="72" loading="lazy">
+            <div class="wearing__info">
+              <span class="wearing__label">Ela está usando</span>
+              <strong>Colar Aço Letra Cravejada A</strong>
+              <span class="wearing__price">R$ 90,00</span>
+            </div>
+            <button class="add" data-add="p13-2" aria-label="Adicionar Colar Aço Letra Cravejada A à sacola"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span>Adicionar</span></button>
+          </div>
+          <p class="signature">Com carinho, <span class="script">Neyla Rodrigues</span></p>
         </div>
       </div>
     </section>
@@ -238,7 +261,7 @@
     </div>
     <div class="drawer__foot" id="cartFoot">
       <div class="total"><span>Subtotal</span><strong id="cartTotal">R$ 0,00</strong></div>
-      <p class="drawer__note">Entrega, pagamento e disponibilidade são combinados com a Neyla no Direct.</p>
+      <div class="drawer__host"><img src="/assets/img/neyla-sq.webp" alt="" width="40" height="40" loading="lazy"><p>Entrega, pagamento e disponibilidade você combina direto com a <strong>Neyla</strong> no Direct.</p></div>
       <button class="btn btn--primary btn--block" id="checkoutBtn">Finalizar pedido pelo Instagram</button>
       <button class="link-btn" id="clearCart">Esvaziar sacola</button>
     </div>
@@ -290,7 +313,8 @@
       <div class="co co--done" id="coDone" hidden>
         <div class="check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="m15 27 7 7 15-15"/></svg></div>
         <h3>Pedido copiado!</h3>
-        <p>Agora cole a mensagem no Direct da <strong>@allavie.semijoias</strong> e envie. A Neyla responde para confirmar tudo com você.</p>
+        <p>Agora cole a mensagem no Direct da <strong>@allavie.semijoias</strong> e envie.</p>
+        <div class="drawer__host drawer__host--center"><img src="/assets/img/neyla-sq.webp" alt="" width="40" height="40" loading="lazy"><p>A <strong>Neyla</strong> responde para confirmar tudo com você 💕</p></div>
         <ol class="co__mini"><li>Abra o Direct</li><li>Toque e segure → <strong>Colar</strong></li><li>Envie 💎</li></ol>
         <a class="btn btn--primary btn--block btn--ig" id="coOpen" href="https://ig.me/m/allavie.semijoias" target="_blank" rel="noopener">Abrir Direct da Allavie</a>
         <button class="btn btn--ghost btn--block" id="coCopy">Copiar pedido de novo</button>
@@ -299,9 +323,15 @@
     </div>
   </div>
 
+  <a class="chat" id="chat" href="https://ig.me/m/allavie.semijoias" target="_blank" rel="noopener" aria-label="Falar com a Neyla no Direct">
+    <img src="/assets/img/neyla-sq.webp" alt="" width="56" height="56">
+    <span class="chat__bubble">Oi! Posso te ajudar a escolher? 💎</span>
+    <span class="chat__dot"></span>
+  </a>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="/assets/js/catalog.js?v=2"></script>
-  <script src="/assets/js/app.js?v=2"></script>
+  <script src="/assets/js/catalog.js?v=3"></script>
+  <script src="/assets/js/app.js?v=3"></script>
 </body>
 </html>
