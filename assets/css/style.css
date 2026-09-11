@@ -28,7 +28,7 @@
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 10px)}
 body{margin:0;font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--nude);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 button{font:inherit;color:inherit;cursor:pointer}
 svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -94,11 +94,11 @@ svg .fill{fill:currentColor;stroke:none}
   radial-gradient(1200px 600px at 85% 10%,rgba(255,255,255,.9),transparent 60%),
   radial-gradient(900px 700px at 0% 100%,var(--blush-2),transparent 60%),
   linear-gradient(160deg,var(--nude),var(--blush) 70%);}
-.hero::before{content:"";position:absolute;inset:0;background:url(/assets/img/satin-top.webp) top right/70% auto no-repeat;opacity:.55;mix-blend-mode:multiply;pointer-events:none}
+.hero::before{content:"";position:absolute;right:-8%;bottom:-10%;width:75%;height:80%;background:url(/assets/img/satin.webp) center/cover no-repeat;opacity:.5;mix-blend-mode:multiply;pointer-events:none;-webkit-mask-image:radial-gradient(closest-side,#000 35%,transparent 100%);mask-image:radial-gradient(closest-side,#000 35%,transparent 100%)}
 .hero__sparkles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 .hero__inner{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:clamp(3rem,7vw,6rem) clamp(16px,3vw,32px) clamp(4rem,8vw,7rem);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
 .hero__title{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,7.4vw,6.2rem);line-height:.95;margin:0 0 1.4rem;letter-spacing:-.02em}
-.hero__title .script{display:block;font-size:1.12em;line-height:1.15;color:transparent;background:linear-gradient(100deg,var(--rose-deep) 0%,var(--gold) 30%,#F4DDB0 45%,var(--gold) 60%,var(--rose-deep) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;animation:shimmer 6s ease-in-out infinite;padding:0 .1em .05em 0;margin-top:.1em}
+.hero__title .script{display:block;font-size:1.12em;line-height:1.15;color:transparent;background:linear-gradient(100deg,var(--rose-deep) 0%,var(--gold) 30%,#F4DDB0 45%,var(--gold) 60%,var(--rose-deep) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;animation:shimmer 6s ease-in-out infinite;padding:0 .15em .08em .35em;margin:.1em 0 0 -.35em}
 @keyframes shimmer{0%,100%{background-position:100% 0}50%{background-position:0 0}}
 .hero__lead{font-size:1.06rem;color:var(--ink-2);max-width:34rem;margin:0 0 2rem;font-weight:300}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:.8rem}
@@ -166,9 +166,9 @@ svg .fill{fill:currentColor;stroke:none}
 
 /* História */
 .story{background:linear-gradient(180deg,var(--nude),var(--blush) 100%);position:relative;overflow:hidden}
-.story::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:url(/assets/img/satin.webp) bottom center/cover no-repeat;opacity:.35;mix-blend-mode:multiply;pointer-events:none}
+.story::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:url(/assets/img/satin.webp) bottom center/cover no-repeat;opacity:.4;mix-blend-mode:multiply;pointer-events:none;-webkit-mask-image:linear-gradient(to top,#000 30%,transparent);mask-image:linear-gradient(to top,#000 30%,transparent)}
 .story__inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:clamp(4rem,9vw,7rem) clamp(16px,3vw,32px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:center}
-.story__logo img{border-radius:50%;aspect-ratio:1;object-fit:cover;box-shadow:var(--shadow),0 0 0 12px rgba(255,255,255,.55),0 0 0 13px rgba(201,145,124,.35);mix-blend-mode:multiply}
+.story__logo img{width:100%;border-radius:999px 999px 28px 28px;box-shadow:var(--shadow),0 0 0 12px rgba(255,255,255,.55),0 0 0 13px rgba(201,145,124,.35)}
 .story__text p{color:var(--ink-2);font-weight:300;font-size:1.05rem}
 .signature{font-size:1rem!important;margin-top:1.6rem}
 .signature .script{font-size:2.4rem;color:var(--rose-deep);margin-left:.4rem;vertical-align:middle}
