@@ -163,7 +163,11 @@
     $("#mbarCount").textContent = `${n} ${n === 1 ? "item" : "itens"}`;
     $("#mbarTotal").textContent = brl(tot);
     mbar.hidden = false;
-    requestAnimationFrame(() => mbar.classList.toggle("is-visible", n > 0 && !drawer.classList.contains("is-open")));
+    requestAnimationFrame(() => {
+      const show = n > 0 && !drawer.classList.contains("is-open");
+      mbar.classList.toggle("is-visible", show);
+      document.body.classList.toggle("has-mbar", show && matchMedia("(max-width: 980px)").matches);
+    });
     syncAddedButtons();
   }
   $("#cartItems").addEventListener("click", e => {
@@ -378,6 +382,10 @@
     }
     requestAnimationFrame(tick);
   })();
+
+  /* Balão "fale com a Neyla" aparece uma vez */
+  const chat = $("#chat");
+  if (chat) setTimeout(() => { chat.classList.add("show-bubble"); setTimeout(() => chat.classList.remove("show-bubble"), 6000); }, 4500);
 
   $("#year").textContent = new Date().getFullYear();
 
