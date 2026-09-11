@@ -376,6 +376,7 @@ svg .fill{fill:currentColor;stroke:none}
   .card__view{display:none}
   .rail{grid-auto-columns:62%}
   .filters__row{gap:.5rem}
+  .filters{position:relative;top:auto}
   .search{flex:1 1 100%;order:-1}
   .tone{flex:1 1 auto;justify-content:space-between}
   .tone__btn{padding:.45rem .6rem;font-size:.68rem}
