@@ -168,7 +168,38 @@ svg .fill{fill:currentColor;stroke:none}
 .story{background:linear-gradient(180deg,var(--nude),var(--blush) 100%);position:relative;overflow:hidden}
 .story::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:url(/assets/img/satin.webp) bottom center/cover no-repeat;opacity:.4;mix-blend-mode:multiply;pointer-events:none;-webkit-mask-image:linear-gradient(to top,#000 30%,transparent);mask-image:linear-gradient(to top,#000 30%,transparent)}
 .story__inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:clamp(4rem,9vw,7rem) clamp(16px,3vw,32px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:center}
-.story__logo img{width:100%;border-radius:999px 999px 28px 28px;box-shadow:var(--shadow),0 0 0 12px rgba(255,255,255,.55),0 0 0 13px rgba(201,145,124,.35)}
+.story__photo{position:relative;justify-self:center;width:min(100%,420px)}
+.photo-arch{position:relative;border-radius:999px 999px 30px 30px;overflow:hidden;box-shadow:var(--shadow),0 0 0 10px rgba(255,255,255,.6),0 0 0 11px rgba(201,145,124,.4);aspect-ratio:3/4}
+.photo-arch img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transition:transform 1.4s var(--ease)}
+.story__photo:hover .photo-arch img{transform:scale(1.04)}
+.photo-arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(58,40,36,.35));pointer-events:none}
+.story__badge{position:absolute;right:-18px;top:18%;width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:var(--shadow),0 0 0 4px #fff;animation:float 7s ease-in-out infinite}
+.story__handle{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);margin:0;color:#fff;font-size:.72rem;letter-spacing:.14em;white-space:nowrap;display:flex;align-items:baseline;gap:.5rem;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.story__handle .script{font-size:1.9rem;letter-spacing:0}
+.quote{margin:1.6rem 0;padding:1.2rem 1.4rem 1.2rem 3rem;position:relative;background:rgba(255,255,255,.65);border-radius:18px;border:1px solid var(--line)}
+.quote::before{content:"“";position:absolute;left:.8rem;top:-.2rem;font-family:var(--serif);font-size:4rem;color:var(--rose);line-height:1}
+.quote p{margin:0;font-family:var(--serif);font-style:italic;font-size:1.25rem!important;line-height:1.4;color:var(--ink)!important;font-weight:400!important}
+.wearing{display:flex;align-items:center;gap:.9rem;background:#fff;border-radius:18px;padding:.6rem .7rem .6rem .6rem;box-shadow:var(--shadow-sm);max-width:460px}
+.wearing img{width:72px;height:72px;border-radius:12px;object-fit:cover}
+.wearing__info{display:flex;flex-direction:column;flex:1;line-height:1.25;text-align:left}
+.wearing__label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep)}
+.wearing__info strong{font-family:var(--serif);font-weight:500;font-size:1.08rem}
+.wearing__price{font-size:.85rem;color:var(--ink-2)}
+.host{display:inline-flex;align-items:center;gap:.8rem;margin-top:1.6rem;text-decoration:none;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:99px;padding:.4rem 1.2rem .4rem .4rem;text-align:left;transition:transform .3s var(--ease),box-shadow .3s}
+.host:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.host img{width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3px var(--rose)}
+.host span{font-size:.8rem;color:var(--ink-2);line-height:1.35;display:flex;flex-direction:column}
+.host strong{font-family:var(--serif);font-size:1.08rem;font-weight:600;color:var(--ink)}
+.drawer__host{display:flex;align-items:center;gap:.7rem;margin:0 0 1rem}
+.drawer__host img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:0 0 auto;box-shadow:0 0 0 2px #fff,0 0 0 3px var(--blush-2)}
+.drawer__host p{margin:0;font-size:.8rem;color:var(--muted);text-align:left}
+.drawer__host--center{justify-content:center;margin:.2rem 0 1rem}
+.chat{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:55;display:flex;align-items:center;flex-direction:row-reverse;gap:.6rem;text-decoration:none;transition:bottom .5s var(--ease)}
+.chat img{width:58px;height:58px;border-radius:50%;object-fit:cover;box-shadow:0 12px 30px -8px rgba(120,70,55,.6),0 0 0 3px #fff,0 0 0 4px var(--rose)}
+.chat__bubble{background:#fff;color:var(--ink);font-size:.82rem;padding:.6rem .95rem;border-radius:16px 16px 4px 16px;box-shadow:var(--shadow);white-space:nowrap;opacity:0;transform:translateX(10px);transition:.5s var(--ease);pointer-events:none}
+.chat.show-bubble .chat__bubble,.chat:hover .chat__bubble{opacity:1;transform:none}
+.chat__dot{position:absolute;right:2px;bottom:4px;width:13px;height:13px;border-radius:50%;background:#5DBB63;box-shadow:0 0 0 2px #fff}
+body.has-mbar .chat{bottom:calc(92px + env(safe-area-inset-bottom))}
 .story__text p{color:var(--ink-2);font-weight:300;font-size:1.05rem}
 .signature{font-size:1rem!important;margin-top:1.6rem}
 .signature .script{font-size:2.4rem;color:var(--rose-deep);margin-left:.4rem;vertical-align:middle}
@@ -346,7 +377,9 @@ svg .fill{fill:currentColor;stroke:none}
   .hero__facts li{border-left:0;padding-left:0;align-items:center}
   .hero__art{width:min(82%,400px);margin-top:1rem}
   .story__inner,.inclusao__inner{grid-template-columns:1fr;text-align:center}
-  .story__logo{max-width:320px;margin:0 auto}
+  .story__photo{max-width:340px}
+  .wearing{margin:0 auto}
+  .quote{text-align:left}
   .inclusao__img{max-width:320px;margin:0 auto}
   .inclusao__buy{justify-content:center}
   .steps__list{grid-template-columns:1fr}
@@ -374,6 +407,12 @@ svg .fill{fill:currentColor;stroke:none}
   .card__row .price{font-size:1.15rem}
   .add{justify-content:center;height:38px;font-size:.62rem}
   .card__view{display:none}
+  .host{margin-left:auto;margin-right:auto}
+  .chat img{width:52px;height:52px}
+  .chat__bubble{display:none}
+  .story__badge{width:72px;height:72px;right:-8px}
+  .wearing .add span{display:none}
+  .wearing .add{padding:0 .8rem}
   .rail{grid-auto-columns:62%}
   .filters__row{gap:.5rem}
   .filters{position:relative;top:auto}
